@@ -129,7 +129,7 @@ class Program
         var climaData = await apiService.GetClimaDataAsync("2535");
         var ondaData = await apiService.GetOndaDataAsync("2535");
 
-        Console.WriteLine($"Dados de clima para {climaData.Cidade}, {climaData.Estado}");
+        Debug.Log($"Dados de clima para {climaData.Cidade}, {climaData.Estado}");
         foreach (var clima in climaData.Clima)
         {
             //Console.WriteLine($"Data: {clima.Data}, Condição: {clima.Condicao}, Mínima: {clima.Min}, Máxima: {clima.Max}");
@@ -142,7 +142,7 @@ class Program
         Debug.Log($"Dados de ondas para {ondaData.Cidade}, {ondaData.Estado}");
         foreach (var onda in ondaData.Ondas)
         {
-            Console.WriteLine($"Data: {onda.Data}");
+            Debug.Log($"Data: {onda.Data}");
             foreach (var dadosOnda in onda.DadosOndas)
             {
                 //Console.WriteLine($"Hora: {dadosOnda.Hora}, Vento: {dadosOnda.Vento}, Direção do Vento: {dadosOnda.DirecaoVento}, Altura da Onda: {dadosOnda.AlturaOnda}");
