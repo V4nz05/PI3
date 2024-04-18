@@ -1,6 +1,6 @@
 
 # Proposta de Tema de PI3
-Título: Framework de Programação de Aplicações para Integração de Dados Meteorológicos em Ambiente Visual Unity
+Título: Integração de Dados Meteorológicos e Geolocalização de Embarcações em Ambiente Visual Unity Utilizando API
 
 Aluno(s): Marcello Antunes Vanz
 
