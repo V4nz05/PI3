@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PI3_Sim.Classes
 {
-    public class 
+    public class Clima
     {
         [JsonProperty("data")]
         public string Data { get; set; }
