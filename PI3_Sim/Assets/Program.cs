@@ -33,6 +33,6 @@ class Program
         }
     }
 
-    int temperatura=(int.MaxValue+int.MinValue)/2;
+  
 
 }
