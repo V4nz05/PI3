@@ -1214,6 +1214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1313069368}
   - component: {fileID: 1313069367}
+  - component: {fileID: 1313069369}
   m_Layer: 0
   m_Name: GerenciadorDiaNoite
   m_TagString: Untagged
@@ -1251,6 +1252,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1313069369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313069366}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f007f3d991a8d044598bc42f11d5cb2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luzDirecional: {fileID: 894758328}
+  duracaoDoDia: 86400
+  horarioText: {fileID: 216089515}
 --- !u!1 &1356670930
 GameObject:
   m_ObjectHideFlags: 0
