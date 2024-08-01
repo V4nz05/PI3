@@ -9,28 +9,32 @@ public class temp : MonoBehaviour
 {
     public TextMeshProUGUI temperatura;
 
-    Clima climaobj;
+    private Clima climaobj;
 
-    int max;
-    int min;
+    private int max;
+    private int min;
 
     void Start()
     {
-
+        // Inicializa o objeto Clima
         climaobj = new Clima();
 
+        // Verifique se Max e Min estão sendo inicializados corretamente
         max = climaobj.Max;
         min = climaobj.Min;
 
-        double tempera =(double)(max + min) / 2;
+        // Adicione logs para verificar os valores de Max e Min
+        Debug.Log($"Max: {max}, Min: {min}");
 
-        temperatura.text = tempera.ToString();
+        // Calcular a temperatura média como double
+        double tempera = (double)(max + min) / 2;
+
+        // Converter para string e exibir na UI
+        temperatura.text = tempera.ToString("F1"); // Formata com uma casa decimal
     }
 
-    // Update is called once per frame
     void Update()
     {
-       
-        
+        // Lógica do Update se necessário
     }
 }
