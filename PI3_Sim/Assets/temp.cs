@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using PI3_Sim.Classes;
 
 public class temp : MonoBehaviour
@@ -11,17 +8,23 @@ public class temp : MonoBehaviour
 
     private Clima climaobj;
 
-    private int max;
-    private int min;
-
     void Start()
     {
         // Inicializa o objeto Clima
         climaobj = new Clima();
 
+        // Atualiza a temperatura inicial com os valores padrão
+        AtualizarTemperatura(climaobj);
+    }
+
+    // Método para atualizar os dados de clima
+    public void AtualizarTemperatura(Clima clima)
+    {
+        climaobj = clima;
+
         // Verifique se Max e Min estão sendo inicializados corretamente
-        max = climaobj.Max;
-        min = climaobj.Min;
+        int max = climaobj.Max;
+        int min = climaobj.Min;
 
         // Adicione logs para verificar os valores de Max e Min
         Debug.Log($"Max: {max}, Min: {min}");
