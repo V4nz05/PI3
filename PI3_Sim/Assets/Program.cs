@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Program : MonoBehaviour
 {
-    private async void Start()
+    async void Start()
     {
         var apiService = new ApiService();
 
@@ -21,6 +21,7 @@ public class Program : MonoBehaviour
             Debug.Log($"Data: {clima.Data}, Condição: {clima.Condicao}, Mínima: {clima.Min}, Máxima: {clima.Max}");
         }
 
+         
         Debug.Log("");
 
         // Exibe dados de ondas
@@ -31,7 +32,7 @@ public class Program : MonoBehaviour
             foreach (var dadosOnda in onda.DadosOndas)
             {
                 Debug.Log($"Hora: {dadosOnda.Hora}, Vento: {dadosOnda.Vento}, Direção do Vento: {dadosOnda.DirecaoVento}, Altura da Onda: {dadosOnda.AlturaOnda}");
-                definicao.definiCoisa(dadosOnda); // Processa e exibe informações adicionais
+                Definicao.DefiniCoisa(dadosOnda); // Processa e exibe informações adicionais
             }
         }
 
@@ -43,11 +44,11 @@ public class Program : MonoBehaviour
         {
             Debug.Log($"Data: {clima.Data}, Condição: {clima.Condicao}, Mínima: {clima.Min}, Máxima: {clima.Max}");
             Utilidades.MostrarTemperatura(clima); // Exibe temperatura média
-            horario.horinha(); // Exibe a hora atual em Brasília
+            Horario.Horinha(); // Exibe a hora atual em Brasília
         }
 
         // Obtém a hora atual em formato decimal
-        double horaAtualDecimal = horario.ObterHoraatual();
+        double horaAtualDecimal = Horario.ObterHoraAtual();
 
         // Converte para string no formato HH:mm
         string horaAtual = TimeSpan.FromHours(horaAtualDecimal).ToString(@"hh\:mm");
@@ -111,6 +112,7 @@ public class Program : MonoBehaviour
         {
             int max = clima.Max;
             int min = clima.Min;
+         
 
             double tempera = ((double)max + min) / 2; // Convertendo para double antes da divisão
 
@@ -120,9 +122,9 @@ public class Program : MonoBehaviour
         }
     }
 
-    static class definicao
+    static class Definicao
     {
-        public static void definiCoisa(DadosOnda dadosOnda)
+        public static void DefiniCoisa(DadosOnda dadosOnda)
         {
             double vent = dadosOnda.Vento;
             double altu = dadosOnda.AlturaOnda;
@@ -156,9 +158,9 @@ public class Program : MonoBehaviour
         }
     }
 
-    static class horario
+    static class Horario
     {
-        public static void horinha()
+        public static void Horinha()
         {
             // Obtém o fuso horário de Brasília
             TimeZoneInfo tzBrasilia = TimeZoneInfo.FindSystemTimeZoneById("E. South America Standard Time");
@@ -186,7 +188,7 @@ public class Program : MonoBehaviour
             return horas + (minutos / 60.0) + (segundos / 3600.0);
         }
 
-        public static double ObterHoraatual()
+        public static double ObterHoraAtual()
         {
             TimeZoneInfo tzBrasilia = TimeZoneInfo.FindSystemTimeZoneById("E. South America Standard Time");
             DateTime horaBrasilia = TimeZoneInfo.ConvertTime(DateTime.UtcNow, tzBrasilia);
