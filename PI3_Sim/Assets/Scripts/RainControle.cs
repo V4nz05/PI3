@@ -16,10 +16,10 @@ public class RainControle : MonoBehaviour
         climaobj = new Clima();
     }
 
-    void Update(Clima clima)
+    void Update()
     {
         // Verifica se a condição é igual a "c" (chuva, por exemplo)
-        if (clima.Condicao == "c")
+        if (climaobj.Condicao == "c")
         {
             // Ativa o sistema de partículas de chuva
             chuvaParticleSystem.SetActive(true);
