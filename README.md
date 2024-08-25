@@ -17,6 +17,6 @@ Este projeto é um simulador básico desenvolvido em Unity 3D que utiliza dados 
 Siga os passos abaixo para instalar o projeto:
 
 ```bash
-git clone https://github.com/seu-usuario/meu-projeto.git
-cd meu-projeto
+git clone (https://github.com/V4nz05/PI3)
+cd PI3
 npm install
