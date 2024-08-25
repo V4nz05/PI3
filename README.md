@@ -8,7 +8,7 @@ Este projeto é um simulador básico desenvolvido em Unity 3D que utiliza dados 
 ## Índice
 
 - [Instalação](#instalação)
-- [Uso](#uso)
+- [Wiki](https://github.com/V4nz05/PI3/wiki)
 - [Contribuição](#contribuição)
 - [Licença](#licença)
 
