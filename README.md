@@ -14,6 +14,8 @@ Este projeto é um simulador básico desenvolvido em Unity 3D que utiliza dados 
 
 ## Integração de Dados Meteorológicos em Ambiente Visual Unity Utilizando API.
 
+![Descrição da Imagem](https://github.com/V4nz05/PI3/blob/main/imagem.png)
+
 ## Instalação
 Siga os passos abaixo para instalar o projeto:
 
