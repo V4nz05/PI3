@@ -1,18 +1,18 @@
 
 # Proposta de Tema de PI3
-Título: Integração de Dados Meteorológicos e Geolocalização de Embarcações em Ambiente Visual Unity Utilizando API
+Título: Integração de Dados Meteorológicos em Ambiente Visual Unity Utilizando API
 
 Aluno(s): Marcello Antunes Vanz
 
 Orientador: Prof. Sergio Augusto Bitencourt Petrovcic
 
 # Objetivo geral
-Buscar informações meteorológicas em tempo real por meio da API do CPTEC e AIS Stream, exibi-las no Unity, incluindo dados como velocidade e direção do vento, ondulação, temperatura, visibilidade, entre outros.
+Buscar informações meteorológicas em tempo real por meio da API do CPTEC, exibi-las no Unity, incluindo dados como velocidade e direção do vento, ondulação, temperatura, visibilidade, entre outros.
 
 # Objetivos específicos
 
-- Coletar informações a partir de aPI online;
-- Processar e analisar os dados provenientes da CPTEC e AIS Stream visando a sua otimização;
+- Coletar informações a partir de APIs online;
+- Processar e analisar os dados provenientes da CPTEC visando a sua otimização;
 - Integrar de maneira sinérgica os dados otimizados ao ambiente visual Unity;
 - Conceber e implementar uma interface visual sofisticada, enriquecida por efeitos visuais, dentro do contexto do ambiente Unity.
 
