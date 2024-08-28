@@ -1,31 +1,25 @@
 using TMPro;
 using UnityEngine;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using PI3_Sim.Classes;
-
 
 public class Temp : MonoBehaviour
 {
     public TextMeshProUGUI temperatura; // Referência ao TextMeshProUGUI na cena
-
+    public Program program;
     private Clima climaobj;
-    async void Start()
+
+    void Start()
     {
-        var apiService = new ApiService();
+        program.OnDataAvailable += Program_OnDataAvailable;
+    }
 
-        // Obtém dados de clima e ondas de forma assíncrona
-        var climaData = await apiService.GetClimaDataAsync("2535");
-        var ondaData = await apiService.GetOndaDataAsync("2535");
+    private void OnDisable()
+    {
+        program.OnDataAvailable -= Program_OnDataAvailable;
+    }
 
-        // Exibe dados de clima
-        Debug.Log($"Dados de clima para {climaData.Cidade}, {climaData.Estado}");
-        foreach (var clima in climaData.Clima)
-        {
-            Debug.Log($"Data: {clima.Data}, Condição: {clima.Condicao}, Mínima: {clima.Min}, Máxima: {clima.Max}");
-        }
-
+    private void Program_OnDataAvailable(object sender, Dados d)
+    {
+        Debug.Log(d.ClimaRoot.Clima[0].Data);
     }
 
     // Método para atualizar os dados de clima
@@ -50,51 +44,5 @@ public class Temp : MonoBehaviour
     void Update()
     {
         // Lógica do Update se necessário
-    }
-}
-
-// Definição das classes de dados
-public class Clima
-{
-    [JsonProperty("data")]
-    public string Data { get; set; }
-
-    [JsonProperty("condicao")]
-    public string Condicao { get; set; }
-
-    [JsonProperty("min")]
-    public int Min { get; set; }
-
-    [JsonProperty("max")]
-    public int Max { get; set; }
-
-    [JsonProperty("indice_uv")]
-    public int IndiceUv { get; set; }
-
-    [JsonProperty("condicao_desc")]
-    public string CondicaoDesc { get; set; }
-}
-
-public class ClimaRoot
-{
-    [JsonProperty("cidade")]
-    public string Cidade { get; set; }
-
-    [JsonProperty("estado")]
-    public string Estado { get; set; }
-
-    [JsonProperty("atualizado_em")]
-    public string AtualizadoEm { get; set; }
-
-    [JsonProperty("clima")]
-    public List<Clima> Clima { get; set; }
-}
-
-// Classe Utilidades para calcular a temperatura
-static class Utilidades
-{
-    public static double CalcularTemperatura(int max, int min)
-    {
-        return (double)(max + min) / 2;
     }
 }

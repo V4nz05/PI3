@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 8360.21, g: 4974.7583, b: 2763.012, a: 1}
+  m_IndirectSpecularColor: {r: 8700.903, g: 5352.2583, b: 3296.6606, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1670,6 +1670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperatura: {fileID: 1253372677}
+  program: {fileID: 0}
 --- !u!1001 &1283978189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6885,6 +6886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperatura: {fileID: 1253372677}
+  program: {fileID: 692453055}
 --- !u!4 &1573592473
 Transform:
   m_ObjectHideFlags: 0
