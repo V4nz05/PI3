@@ -9,12 +9,18 @@ public class Dados
 {
     public ClimaRoot ClimaRoot { get; set; }
     public OndaRoot OndaRoot { get; set; }
+
+    public double alturaOndaSalva { get; private set; }
+
+    public double ventoSalvo { get; private set; }
+
 }
 
 public delegate void APIReady(object sender, Dados d);
 
 public class Program : MonoBehaviour
 {
+
     public Dados dados = new Dados();
     ApiService apiService = new ApiService();
     public event APIReady OnDataAvailable;
