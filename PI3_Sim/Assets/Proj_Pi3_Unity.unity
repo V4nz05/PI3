@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 8360.21, g: 4974.7583, b: 2763.012, a: 1}
+  m_IndirectSpecularColor: {r: 8671.872, g: 5395.147, b: 3445.2974, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2098,6 +2098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   temperatura: {fileID: 1253372677}
   program: {fileID: 692453055}
+  TextTemperatura: {fileID: 1253372677}
 --- !u!114 &1280458863
 MonoBehaviour:
   m_ObjectHideFlags: 0

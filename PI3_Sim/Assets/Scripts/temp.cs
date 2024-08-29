@@ -6,6 +6,7 @@ public class Temp : MonoBehaviour
     public TextMeshProUGUI temperatura; // Referência ao TextMeshProUGUI na cena
     public Program program; // Referência ao script Program
     private Clima climaobj;
+    public TMP_Text TextTemperatura;
 
     void Start()
     {
@@ -65,7 +66,8 @@ public class Temp : MonoBehaviour
         if (temperatura != null)
         {
             // Converter para string e exibir na UI
-            temperatura.text = tempera.ToString("F1"); // Formata com uma casa decimal
+            //temperatura.text = tempera.ToString("F1"); // Formata com uma casa decimal
+            TextTemperatura.text = tempera.ToString("F1");
         }
         else
         {
