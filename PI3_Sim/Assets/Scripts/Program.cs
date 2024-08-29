@@ -14,6 +14,7 @@ public class Dados
 
     public double ventoSalvo { get; private set; }
 
+    public string direcaoVentoSalva { get; private set; }
 }
 
 public delegate void APIReady(object sender, Dados d);
@@ -156,13 +157,15 @@ public static class Utilidades
     {
         int max = clima.Max;
         int min = clima.Min;
-        return (double)(max + min) / 2;
+        return CalcularTemperatura(max, min);
     }
+
     public static double CalcularTemperatura(int max, int min)
     {
         return (double)(max + min) / 2;
     }
 }
+
 static class Definicao
 {
     public static void DefiniCoisa(DadosOnda dadosOnda)

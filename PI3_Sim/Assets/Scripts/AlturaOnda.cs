@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AlturaOnda : MonoBehaviour
 {
-    public TextMeshProUGUI temperatura; // Referência ao TextMeshProUGUI na cena
+    public TextMeshProUGUI alturaOndaText; // Referência ao TextMeshProUGUI na cena para exibir a altura da onda
     public Program program; // Referência ao objeto Program que contém os dados de onda
 
     void Start()
@@ -36,7 +36,16 @@ public class AlturaOnda : MonoBehaviour
 
     public void AtualizarAlturaOnda(double alturaOnda)
     {
-        Debug.Log($"Altura da Onda Calculada: {alturaOnda}");
-        temperatura.text = alturaOnda.ToString("F1"); // Formata com uma casa decimal
+        // Verifica se o componente TextMeshProUGUI está atribuído
+        if (alturaOndaText != null)
+        {
+            // Exibe a altura da onda formatada com uma casa decimal
+            alturaOndaText.text = alturaOnda.ToString("F1");
+            Debug.Log($"Altura da Onda Atualizada: {alturaOnda}");
+        }
+        else
+        {
+            Debug.LogError("O componente TextMeshProUGUI 'alturaOndaText' não está atribuído.");
+        }
     }
 }

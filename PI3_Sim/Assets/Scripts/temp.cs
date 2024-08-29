@@ -4,32 +4,56 @@ using UnityEngine;
 public class Temp : MonoBehaviour
 {
     public TextMeshProUGUI temperatura; // Referência ao TextMeshProUGUI na cena
-    public Program program;
+    public Program program; // Referência ao script Program
     private Clima climaobj;
 
     void Start()
     {
-        program.OnDataAvailable += Program_OnDataAvailable;
+        // Verifica se 'program' não é nulo
+        if (program != null)
+        {
+            program.OnDataAvailable += Program_OnDataAvailable;
+        }
+        else
+        {
+            Debug.LogError("A referência ao script 'Program' não está atribuída.");
+        }
     }
 
     private void OnDisable()
     {
-        program.OnDataAvailable -= Program_OnDataAvailable;
+        if (program != null)
+        {
+            program.OnDataAvailable -= Program_OnDataAvailable;
+        }
     }
 
     private void Program_OnDataAvailable(object sender, Dados d)
     {
-        Debug.Log(d.ClimaRoot.Clima[0].Data);
+        // Verifica se 'ClimaRoot' e 'Clima' não são nulos
+        if (d?.ClimaRoot?.Clima != null && d.ClimaRoot.Clima.Count > 0)
+        {
+            climaobj = d.ClimaRoot.Clima[0];
+            AtualizarTemperatura(climaobj);
+        }
+        else
+        {
+            Debug.LogError("Dados de clima não estão disponíveis ou estão no formato incorreto.");
+        }
     }
 
     // Método para atualizar os dados de clima
     public void AtualizarTemperatura(Clima clima)
     {
-        climaobj = clima;
+        if (clima == null)
+        {
+            Debug.LogError("O objeto 'Clima' fornecido é nulo.");
+            return;
+        }
 
         // Verifique se Max e Min estão sendo inicializados corretamente
-        int max = climaobj.Max;
-        int min = climaobj.Min;
+        int max = clima.Max;
+        int min = clima.Min;
 
         // Adicione logs para verificar os valores de Max e Min
         Debug.Log($"Max: {max}, Min: {min}");
@@ -37,8 +61,16 @@ public class Temp : MonoBehaviour
         // Usar o método da classe Utilidades para calcular a temperatura
         double tempera = Utilidades.CalcularTemperatura(max, min);
 
-        // Converter para string e exibir na UI
-        temperatura.text = tempera.ToString("F1"); // Formata com uma casa decimal
+        // Verifica se 'temperatura' não é nulo
+        if (temperatura != null)
+        {
+            // Converter para string e exibir na UI
+            temperatura.text = tempera.ToString("F1"); // Formata com uma casa decimal
+        }
+        else
+        {
+            Debug.LogError("A referência ao componente TextMeshProUGUI não está atribuída.");
+        }
     }
 
     void Update()

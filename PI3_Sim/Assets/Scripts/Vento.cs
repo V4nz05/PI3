@@ -31,12 +31,23 @@ public class Vento : MonoBehaviour
     {
         // Acessando ventoSalvo a partir da instância de dados dentro de program
         double ventoSalvo = program.dados.ventoSalvo;
+
+        // Atualiza o TextMeshProUGUI com a velocidade do vento
         AtualizarVento(ventoSalvo);
     }
 
     public void AtualizarVento(double vento)
     {
-        Debug.Log($"Velocidade do Vento Calculada: {vento}");
-        velocidadeVento.text = vento.ToString("F1"); // Formata com uma casa decimal
+        // Verifica se o componente TextMeshProUGUI está atribuído
+        if (velocidadeVento != null)
+        {
+            // Exibe a velocidade do vento formatada com uma casa decimal
+            velocidadeVento.text = vento.ToString("F1");
+            Debug.Log($"Velocidade do Vento Atualizada: {vento}");
+        }
+        else
+        {
+            Debug.LogError("O componente TextMeshProUGUI 'velocidadeVento' não está atribuído.");
+        }
     }
 }
